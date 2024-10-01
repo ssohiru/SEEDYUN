@@ -56,6 +56,7 @@ def main():
                                                content['내용 요소'].tolist())
         else:
             st.write("해당 조건에 맞는 내용체계가 없습니다.")
+            st.markdown("[교육과정 확인](https://ncic.re.kr/new/mobile.dwn.ogf.inventoryList.do)")
             selected_content = []
 
     # Step 4: Additional Information Input
