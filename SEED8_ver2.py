@@ -33,7 +33,6 @@ def main():
         ]
 
         if not standards.empty:
-            st.write("선택한 성취기준:")
             standards['표시'] = standards.apply(lambda x: f"[{x['분류번호']}] {x['성취기준']}", axis=1)
             selected_standards = st.multiselect('성취기준을 선택하세요:', 
                                                   standards['표시'].tolist())
@@ -53,7 +52,6 @@ def main():
         ]
 
         if not content.empty:
-            st.write("선택한 내용체계:")
             selected_content = st.multiselect('내용 요소를 선택하세요:', 
                                                content['내용 요소'].tolist())
         else:
@@ -74,7 +72,7 @@ def main():
         student_response = st.text_input('학생들의 반응 양식 및 표현 양식, 언어 유창성')
         core_concept = st.text_input('교사가 선정한 핵심 개념 또는 핵심개념을 추출할 교육과정 핵심아이디어의 문장')
 
-        if st.button('제출'):
+        if st.button('입력'):
             # Display final summary
             formatted_text = f"""
             과목: {subject}
