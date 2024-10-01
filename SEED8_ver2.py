@@ -9,8 +9,8 @@ def main():
     st.title("2022 교사교육과정 및 학급교육과정 개발 도우미")
 
     # Load the data
-    standards_data = load_data('C:/Users/sohi9/OneDrive - 서울공항초등학교/8. SEED/1조 산출물/data/2022 통합본.xlsx', '성취기준 통합')
-    content_data = load_data('C:/Users/sohi9/OneDrive - 서울공항초등학교/8. SEED/1조 산출물/data/2022 통합본.xlsx', '내용체계 통합')
+    standards_data = load_data('data/2022 통합본.xlsx', '성취기준 통합')
+    content_data = load_data('data/2022 통합본.xlsx', '내용체계 통합')
 
     # Step 1: Subject, Curriculum, and Grade Selection
     st.subheader("1. 시작 (Start)")
