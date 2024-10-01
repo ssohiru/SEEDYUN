@@ -12,6 +12,10 @@ def main():
     standards_data = load_data('data/2022 통합본.xlsx', '성취기준 통합')
     content_data = load_data('data/2022 통합본.xlsx', '내용체계 통합')
 
+   # Get unique subjects and add "기타" option
+    subjects = standards_data['과목'].unique().tolist()
+    subjects.append("기타")  # Add "기타" option
+
     # Step 1: Subject, Curriculum, and Grade Selection
     st.subheader("시작(Start)")
     subject = st.selectbox('과목을 선택하세요:', standards_data['과목'].unique())
