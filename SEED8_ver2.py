@@ -12,16 +12,17 @@ def main():
     standards_data = load_data('data/2022 통합본.xlsx', '성취기준 통합')
     content_data = load_data('data/2022 통합본.xlsx', '내용체계 통합')
 
-   # Get unique subjects and add "기타" option
+    # Step 1: Subject, Curriculum, and Grade Selection
+    st.subheader("시작(Start)")
+    
+    # Get unique subjects and add "기타" option
     subjects = standards_data['과목'].unique().tolist()
     subjects.append("기타")  # Add "기타" option
 
-    # Step 1: Subject, Curriculum, and Grade Selection
-    st.subheader("시작(Start)")
-    subject = st.selectbox('과목을 선택하세요:', standards_data['과목'].unique())
+    subject = st.selectbox('과목을 선택하세요:', subjects)
     category = st.selectbox('교육과정을 선택하세요:', standards_data['교육과정'].unique())
     grade_selection = st.selectbox('학년군을 선택하세요:', standards_data['학년'].unique())
-
+    
     # Create tabs for Achievement Standards, Content Framework, and Additional Information
     tab1, tab2, tab3 = st.tabs(["1. 성취기준 검색", "2. 내용체계 검색", "3. 추가 정보 입력"])
 
