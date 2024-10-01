@@ -10,7 +10,7 @@ def main():
     st.title("성취기준 검색기")
 
     # Load the standards data
-    standards_data = load_data('C:/Users/sohi9/OneDrive - 서울공항초등학교/8. SEED/1조 산출물/data/2022 통합본.xlsx', '성취기준 통합')
+    standards_data = load_data('data/2022 통합본.xlsx', '성취기준 통합')
 
     # Search method selection
     search_method = st.sidebar.selectbox("검색 방법 선택", ["조건으로 검색", "내용으로 검색"])
