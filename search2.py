@@ -16,7 +16,7 @@ def main():
     search_method = st.sidebar.selectbox("검색 방법 선택", ["조건으로 검색", "내용으로 검색"])
 
     if search_method == "조건으로 검색":
-        st.sidebar.subheader("1. 검색 조건 선택")
+        st.sidebar.subheader("검색 조건 선택")
         subject = st.sidebar.selectbox('과목을 선택하세요:', content_data['과목'].unique())
         category = st.sidebar.selectbox('교육과정을 선택하세요:', content_data['교육과정'].unique())
         grade_selection = st.sidebar.selectbox('학년군을 선택하세요:', content_data['학년'].unique())
