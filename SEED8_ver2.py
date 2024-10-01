@@ -13,7 +13,7 @@ def main():
     content_data = load_data('data/2022 통합본.xlsx', '내용체계 통합')
 
     # Step 1: Subject, Curriculum, and Grade Selection
-    st.subheader("1. 시작 (Start)")
+    st.subheader("시작(Start)")
     subject = st.selectbox('과목을 선택하세요:', standards_data['과목'].unique())
     category = st.selectbox('교육과정을 선택하세요:', standards_data['교육과정'].unique())
     grade_selection = st.selectbox('학년군을 선택하세요:', standards_data['학년'].unique())
