@@ -38,6 +38,7 @@ def main():
                                                   standards['표시'].tolist())
         else:
             st.write("해당 조건에 맞는 성취기준이 없습니다.")
+            st.markdown("[교육과정 확인](https://ncic.re.kr/new/mobile.dwn.ogf.inventoryList.do)")
             selected_standards = []
 
     # Step 3: Content Framework Search
