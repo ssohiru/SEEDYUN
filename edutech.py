@@ -3,7 +3,7 @@ import pandas as pd
 
 def search_function():
     # 통합된 데이터 불러오기
-    file_path = 'C:/Users/sohi9/OneDrive - 서울공항초등학교/8. SEED/1조 산출물/data/통합_에듀테크_정리.xlsx'
+    file_path = 'data/통합_에듀테크_정리.xlsx'
     data = pd.read_excel(file_path, sheet_name='통합')
 
     # Streamlit 어플리케이션
