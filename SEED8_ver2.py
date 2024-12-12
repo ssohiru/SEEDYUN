@@ -48,26 +48,26 @@ def main():
 
     # Step 3: Content Framework Search
     with tab2:
-    st.subheader("내용체계 검색")
-    
-    # Get relevant content with category
-    content = content_data[
-        (content_data['과목'] == subject) & 
-        (content_data['교육과정'] == category) & 
-        (content_data['학년'] == grade_selection)
-    ]
-
-    if not content.empty:
-        # Combine '범주' and '내용 요소' for display
-        content['범주_내용'] = content['범주'] + ": " + content['내용 요소']
+        st.subheader("내용체계 검색")
         
-        # Display multi-select with both category and content
-        selected_content = st.multiselect('내용 요소를 선택하세요:', 
-                                           content['범주_내용'].tolist())
-    else:
-        st.write("해당 조건에 맞는 내용체계가 없습니다.")
-        st.markdown("[교육과정 확인](https://ncic.re.kr/new/mobile.dwn.ogf.inventoryList.do)")
-        selected_content = []
+        # Get relevant content with category
+        content = content_data[
+            (content_data['과목'] == subject) & 
+            (content_data['교육과정'] == category) & 
+            (content_data['학년'] == grade_selection)
+        ]
+    
+        if not content.empty:
+            # Combine '범주' and '내용 요소' for display
+            content['범주_내용'] = content['범주'] + ": " + content['내용 요소']
+            
+            # Display multi-select with both category and content
+            selected_content = st.multiselect('내용 요소를 선택하세요:', 
+                                               content['범주_내용'].tolist())
+        else:
+            st.write("해당 조건에 맞는 내용체계가 없습니다.")
+            st.markdown("[교육과정 확인](https://ncic.re.kr/new/mobile.dwn.ogf.inventoryList.do)")
+            selected_content = []
 
     # Step 4: Additional Information Input
     with tab3:
